@@ -5,8 +5,6 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.math.BigDecimal;
 import java.util.List;
-import kitchenpos.menu.domain.Menu;
-import kitchenpos.menu.domain.MenuProduct;
 import kitchenpos.menugroup.domain.MenuGroup;
 import kitchenpos.product.domain.Price;
 import kitchenpos.product.domain.Product;
@@ -48,7 +46,7 @@ class MenuTest {
             Menu menu = Menu.create(
                     name,
                     menuPrice,
-                    menuGroup,
+                    menuGroup.getId(),
                     menuProducts,
                     products
             );
@@ -68,7 +66,7 @@ class MenuTest {
 
             // when
             // then
-            assertThatThrownBy(() -> Menu.create("저녁 특선", invalidMenuPrice, menuGroup, menuProducts, products))
+            assertThatThrownBy(() -> Menu.create("저녁 특선", invalidMenuPrice, menuGroup.getId(), menuProducts, products))
                     .isInstanceOf(IllegalArgumentException.class);
         }
 

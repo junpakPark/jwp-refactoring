@@ -3,7 +3,6 @@ package kitchenpos.menu.domain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import kitchenpos.menugroup.domain.MenuGroup;
 import kitchenpos.product.domain.Price;
 import kitchenpos.product.domain.Product;
 import org.springframework.data.annotation.Id;
@@ -35,14 +34,14 @@ public class Menu {
     public static Menu create(
             String name,
             Price price,
-            MenuGroup menuGroup,
+            Long menuGroupId,
             List<MenuProduct> menuProducts,
             List<Product> products
     ) {
         Price totalPrice = MenuProductPriceCalculator.calculateTotalPrice(menuProducts, products);
         validatePrice(price, totalPrice);
 
-        return new Menu(null, name, price, menuGroup.getId(), menuProducts);
+        return new Menu(null, name, price, menuGroupId, menuProducts);
     }
 
     private static void validatePrice(Price price, Price totalPrice) {

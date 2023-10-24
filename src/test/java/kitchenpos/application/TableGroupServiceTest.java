@@ -18,8 +18,8 @@ import kitchenpos.order.application.dto.OrderResponse;
 import kitchenpos.order.application.dto.OrderStatusRequest;
 import kitchenpos.order.domain.OrderRepository;
 import kitchenpos.order.domain.OrderStatus;
-import kitchenpos.order.domain.OrderTable;
-import kitchenpos.order.domain.OrderTableRepository;
+import kitchenpos.table.domain.OrderTable;
+import kitchenpos.table.domain.OrderTableRepository;
 import kitchenpos.product.application.dto.ProductRequest;
 import kitchenpos.product.application.dto.ProductResponse;
 import kitchenpos.support.ServiceTest;
@@ -113,7 +113,7 @@ class TableGroupServiceTest extends ServiceTest {
             TableGroupRequest tableGroupRequest = TableGroupRequest.from(
                     List.of(firstOrderTable.getId(), secondOrderTable.getId())
             );
-            TableGroupResponse actual = tableGroupService.create(tableGroupRequest);
+            tableGroupService.create(tableGroupRequest);
 
             // when
             // then
@@ -191,10 +191,10 @@ class TableGroupServiceTest extends ServiceTest {
                     List.of(new MenuProductRequest(productResponse.getId(), 1L))
             ));
 
-            OrderResponse firstOrder = orderService.create(new OrderRequest(firstOrderTable.getId(), List.of(
+            orderService.create(new OrderRequest(firstOrderTable.getId(), List.of(
                     new OrderLineItemRequest(menuResponse.getId(), 1L)
             )));
-            OrderResponse secondOrder = orderService.create(new OrderRequest(secondOrderTable.getId(), List.of(
+            orderService.create(new OrderRequest(secondOrderTable.getId(), List.of(
                     new OrderLineItemRequest(menuResponse.getId(), 1L)
             )));
 

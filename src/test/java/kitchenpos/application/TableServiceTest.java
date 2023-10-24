@@ -15,13 +15,13 @@ import kitchenpos.order.application.dto.OrderLineItemRequest;
 import kitchenpos.order.application.dto.OrderRequest;
 import kitchenpos.order.application.dto.OrderResponse;
 import kitchenpos.order.application.dto.OrderStatusRequest;
-import kitchenpos.order.application.dto.TableEmptyRequest;
-import kitchenpos.order.application.dto.TableGuestRequest;
-import kitchenpos.order.application.dto.TableRequest;
-import kitchenpos.order.application.dto.TableResponse;
+import kitchenpos.table.application.dto.TableEmptyRequest;
+import kitchenpos.table.application.dto.TableGuestRequest;
+import kitchenpos.table.application.dto.TableRequest;
+import kitchenpos.table.application.dto.TableResponse;
 import kitchenpos.order.domain.OrderRepository;
 import kitchenpos.order.domain.OrderStatus;
-import kitchenpos.order.domain.OrderTableRepository;
+import kitchenpos.table.domain.OrderTableRepository;
 import kitchenpos.product.domain.Price;
 import kitchenpos.product.domain.Product;
 import kitchenpos.product.domain.ProductRepository;
@@ -36,9 +36,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 @SuppressWarnings("NonAsciiCharacters")
 class TableServiceTest extends ServiceTest {
 
-
-    @Autowired
-    private OrderRepository orderRepository;
     @Autowired
     private OrderTableRepository orderTableRepository;
     @Autowired

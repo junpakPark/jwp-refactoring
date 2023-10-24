@@ -15,11 +15,11 @@ import kitchenpos.order.application.dto.OrderLineItemRequest;
 import kitchenpos.order.application.dto.OrderRequest;
 import kitchenpos.order.application.dto.OrderResponse;
 import kitchenpos.order.application.dto.OrderStatusRequest;
-import kitchenpos.order.application.dto.TableRequest;
-import kitchenpos.order.application.dto.TableResponse;
+import kitchenpos.table.application.dto.TableRequest;
+import kitchenpos.table.application.dto.TableResponse;
 import kitchenpos.order.domain.OrderStatus;
-import kitchenpos.order.domain.OrderTable;
-import kitchenpos.order.domain.OrderTableRepository;
+import kitchenpos.table.domain.OrderTable;
+import kitchenpos.table.domain.OrderTableRepository;
 import kitchenpos.product.domain.Price;
 import kitchenpos.product.domain.Product;
 import kitchenpos.product.domain.ProductRepository;
@@ -56,7 +56,7 @@ class OrderServiceTest extends ServiceTest {
         Product product = productRepository.save(new Product("치킨", price));
 
         menu = menuRepository.save(
-                Menu.create("후라이드", price, savedMenuGroup, List.of(new MenuProduct(product.getId(), 1L)),
+                Menu.create("후라이드", price, savedMenuGroup.getId(), List.of(new MenuProduct(product.getId(), 1L)),
                         List.of(product)));
     }
 

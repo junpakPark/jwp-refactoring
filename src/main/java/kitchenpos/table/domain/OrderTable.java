@@ -1,5 +1,7 @@
-package kitchenpos.order.domain;
+package kitchenpos.table.domain;
 
+import kitchenpos.order.domain.Order;
+import kitchenpos.order.domain.Orders;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Embedded;
 

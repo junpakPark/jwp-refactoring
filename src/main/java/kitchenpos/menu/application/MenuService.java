@@ -44,7 +44,7 @@ public class MenuService {
         Menu menu = Menu.create(
                 menuRequest.getName(),
                 price,
-                menuGroup,
+                menuGroup.getId(),
                 menuProducts,
                 products
         );

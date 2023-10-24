@@ -4,7 +4,7 @@ import kitchenpos.tablegroup.application.TableGroupService;
 import kitchenpos.menu.application.MenuService;
 import kitchenpos.menugroup.application.MenuGroupService;
 import kitchenpos.order.application.OrderService;
-import kitchenpos.order.application.TableService;
+import kitchenpos.table.application.TableService;
 import kitchenpos.product.application.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
